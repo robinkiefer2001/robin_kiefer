@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Abhängigkeiten installieren
-        run: pip install pytest
+        run: pip install -r requirements.txt
       - name: Tests
-        working-directory: src
+        working-directory: tests
         run: pytest -q
