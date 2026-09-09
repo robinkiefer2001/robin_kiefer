@@ -1,0 +1,13 @@
+# Auftrag 1 - Bug 1
+# Symptom: Dieser Workflow taucht im Tab "Actions" gar nicht auf.
+name: A1 Hello
+
+on: [push]
+
+jobs:
+  hello:
+  runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Gruss ausgeben
+        run: echo "Hallo aus Tag 05!"

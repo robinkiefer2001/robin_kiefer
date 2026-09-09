@@ -1,0 +1,19 @@
+# Auftrag 1 - Bug 4
+# Symptom: Der Schritt "Tests" findet nichts zum Ausführen.
+name: A4 Testpfad
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Abhängigkeiten installieren
+        run: pip install pytest
+      - name: Tests
+        working-directory: src
+        run: pytest -q
